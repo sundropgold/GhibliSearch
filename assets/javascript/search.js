@@ -114,33 +114,45 @@ $(document).ready(function(){
 	} // end getGhibliGif
 
 	function clickState(){
-				// change the state of the gif on click
+		// change the state of the gif on click
 
-				// store the state and animate/still srcs in variables
-				var state = $(this).attr('data-state');
-				console.log("state: " + state);
+		// store the state and animate/still srcs in variables
+		var state = $(this).attr('data-state');
+		console.log("state: " + state);
 
-				var gifA = $(this).attr('data-animate');
-				console.log("gifA: " + gifA);
+		var gifA = $(this).attr('data-animate');
+		console.log("gifA: " + gifA);
 
-				var gifS = $(this).attr('data-still');
-				console.log("gifS: " + gifS);
+		var gifS = $(this).attr('data-still');
+		console.log("gifS: " + gifS);
 
-				if (state == 'still') {
-				$(this).attr('src', gifA);
-				$(this).attr('data-state', 'animate');
-				}
+		// if the gif's state is still
+		if (state == 'still') {
+			// when it's clicked, it should start animating
+			$(this).attr('src', gifA);
+			// change state to animate
+			$(this).attr('data-state', 'animate');
+		}
 
-				else {
-				$(this).attr('src', gifS);
-				$(this).attr('data-state', 'still');
-				}
+		else {
+		// else if the gif is already moving
 
-			}
+			// on click, it should stop moving
+			$(this).attr('src', gifS);
 
+			// change state to still
+			$(this).attr('data-state', 'still');
+		}
+
+	}
+
+	// call function when .movieBTN is clicked
 	$(document).on('click', '.movieBTN', getGhibliGif);
+
+	// call function when .ghibliGif is clicked
 	$(document).on('click', '.ghibliGif', clickState);
 
+	// create initial buttons
 	renderButtons();
 
 	
