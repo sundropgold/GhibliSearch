@@ -4,8 +4,9 @@ $(document).ready(function(){
 	var movies = ["spirited away", "howl's moving castle", "princess mononoke"]
 
 	// array of all available ghibli movies
-	var allMovies = ["castle in the sky", "grave of the fireflies", "my neighbor totoro", "kiki's delivery service", "only yesterday", "porco rosso", "pom poko", "whisper of the heart", "princess mononoke", "my neighbors the yamadas", "spirited away", "the cat returns", "howl's moving castle", "tales from earthsea", "ponyo", "arrietty", "from up on poppy hill", "the wind rises", "the tale of the princess kaguya", "when marnie was there"];
+	var allMovies = ["castle in the sky", "grave of the fireflies", "my neighbor totoro", "kiki's delivery service", "only yesterday", "porco rosso", "pom poko", "whisper of the heart", "princess mononoke", "my neighbors the yamadas", "spirited away", "the cat returns", "howl's moving castle", "tales from earthsea", "ponyo", "arrietty", "from up on poppy hill", "the wind rises", "the tale of the princess kaguya", "when marnie was there", "studio ghibli", "ghibli"];
 
+	// store api key
 	var apiKey = "dc6zaTOxFJmzC";
 
 	function renderButtons(){
@@ -76,16 +77,16 @@ $(document).ready(function(){
 				var rating = results[i].rating;
 
 				// display gif rating
-				var p = $("<p>").text("Rating: " + rating);
+				var p = $("<p>").text("rating: " + rating);
 
 				// create img element to store gif
 				var ghibliGif = $("<img>");
 
-				// store still gif
-				var gifStill = results[i].images.original.url;
-
 				// store animated gif
-				var gifAnimate = results[i].images.original_still.url;
+				var gifAnimate = results[i].images.original.url;
+
+				// store still gif
+				var gifStill = results[i].images.original_still.url;
 
 				// add attribute for gif state
 				$(ghibliGif).attr("data-state", "still");
@@ -99,20 +100,50 @@ $(document).ready(function(){
 				// put still gif as default src
 				$(ghibliGif).attr("src", gifStill);
 
-				gifDiv.append(p);
+				$(ghibliGif).attr("class", "ghibliGif");
+
 				gifDiv.append(ghibliGif);
+				gifDiv.append(p);
 
 				$('#gifArea').prepend(gifDiv);
 
 			}
 
-		});
+		}); // end done
 
-	}
+	} // end getGhibliGif
+
+	function clickState(){
+				// change the state of the gif on click
+
+				// store the state and animate/still srcs in variables
+				var state = $(this).attr('data-state');
+				console.log("state: " + state);
+
+				var gifA = $(this).attr('data-animate');
+				console.log("gifA: " + gifA);
+
+				var gifS = $(this).attr('data-still');
+				console.log("gifS: " + gifS);
+
+				if (state == 'still') {
+				$(this).attr('src', gifA);
+				$(this).attr('data-state', 'animate');
+				}
+
+				else {
+				$(this).attr('src', gifS);
+				$(this).attr('data-state', 'still');
+				}
+
+			}
 
 	$(document).on('click', '.movieBTN', getGhibliGif);
+	$(document).on('click', '.ghibliGif', clickState);
 
 	renderButtons();
+
+	
 
 });
 
