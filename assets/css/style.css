@@ -1,0 +1,186 @@
+/* ********** GENERAL ********** */
+
+* {
+	box-sizing: border-box;
+	overflow-x:hidden;
+}
+
+body {
+
+	background-color: #ffe8ee;
+	
+}
+
+div.container#header {
+	display:block;
+	float:left;
+
+	width:100%;
+	margin:0%;
+	padding:0%;
+}
+
+div.col-lg-12 {
+	padding:0;
+	margin:0;
+	width:100%;
+}
+
+.row {
+	width:100%;
+	margin:0 auto;
+}
+
+div#title {
+	width:100%;
+	position:relative;
+	padding:0;
+	margin:0;
+}
+
+div#contentArea {
+	position:relative;
+	width:36%;
+	margin-top:4%;
+}
+
+div#searchArea {
+	position:relative;
+	width:100%;
+	margin:0 auto;
+}
+
+div#btnArea {
+	position:relative;
+	width:100%;
+	margin:0 auto;
+}
+
+div#gifArea {
+	width:64%;
+	margin-top:4%;	
+	display:block;
+	float:left;
+}
+
+div.ghibliDiv {
+	width:33%;
+	display: block;
+	float:left;
+	padding:0;
+
+}
+
+/* ********** TEXT *********** */
+
+h1 {
+	font-family: 'Amatic SC', cursive;
+	font-size: 55px;
+	letter-spacing: 1.5px;
+
+	position:relative;
+	left:10%;
+}
+
+label, input, p, button {
+	font-family: 'Palanquin', sans-serif;
+	font-size:15px;
+}
+
+p {
+	margin:2%;
+	padding:1%;
+}
+
+label {
+	font-size:20px;
+	font-weight:bolder;
+	padding: 2%;
+}
+
+/* ********** NAV ********** */
+nav {
+	position:absolute;
+	left:0;
+	right:0;
+	width:100%;
+}
+
+.navbar-inverse .navbar-text {
+	color:#ffe8ee;
+}
+/* ********** FORM ********** */
+
+form {
+
+	position:relative;
+	width:50%;
+
+}
+
+input {
+	margin:1%;
+}
+
+input#searchTerm {
+
+	width:95%;
+	height:50px;
+
+}
+
+/* ********** BUTTONS ********** */
+
+#addBTN {
+
+	width:130px;
+	height:50px;
+
+	color:#82c1f2;
+	border-style: solid;
+	border-width:2px;
+	border-color:#b7e0ff;
+	background-color:#ffffff;
+	border-radius: 25px;
+
+}
+
+#addBTN:hover {
+	color:#ffa0c4;
+	border-color:#ffa0c4;
+	background-color: #ffffff;
+}
+
+button {
+	display:block;
+	float:left;
+
+	width:42%;
+	height:50px;
+	margin:1%;
+
+	color:#82c1f2;
+	border-style: solid;
+	border-width:2px;
+	border-color:#b7e0ff;
+	background-color:#ffffff;
+
+	border-radius: 25px;
+}
+
+button:hover {
+	color:#ffa0c4;
+	border-color:#ffa0c4;
+	background-color: #ffffff;
+}
+
+/* ********** IMAGES ********** */
+img {
+	width:100%;
+	height:55%;
+	margin:3%;
+}
+
+img:hover {
+	opacity:.7;
+}

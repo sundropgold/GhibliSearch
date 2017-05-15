@@ -4,10 +4,20 @@ $(document).ready(function(){
 	var movies = ["spirited away", "howl's moving castle", "princess mononoke"]
 
 	// array of all available ghibli movies
-	var allMovies = ["castle in the sky", "grave of the fireflies", "my neighbor totoro", "kiki's delivery service", "only yesterday", "porco rosso", "pom poko", "whisper of the heart", "princess mononoke", "my neighbors the yamadas", "spirited away", "the cat returns", "howl's moving castle", "tales from earthsea", "ponyo", "arrietty", "from up on poppy hill", "the wind rises", "the tale of the princess kaguya", "when marnie was there", "studio ghibli", "ghibli"];
+	var allMovies = ["castle in the sky", "grave of the fireflies", "my neighbor totoro", "kiki's delivery service", "only yesterday", "porco rosso", "pom poko", "whisper of the heart", "princess mononoke", "my neighbors the yamadas", "spirited away", "the cat returns", "howl's moving castle", "tales from earthsea", "ponyo", "arrietty", "the secret world of arrietty", "from up on poppy hill", "the wind rises", "the tale of the princess kaguya", "when marnie was there", "studio ghibli", "ghibli"];
 
 	// store api key
 	var apiKey = "dc6zaTOxFJmzC";
+
+	var audio = new Audio('assets/javascript/bg.mp3');
+
+	audio.addEventListener('ended', function(){
+				// loop after finished
+				this.currentTime = 0;
+				this.play();
+			}, false);
+
+	audio.play();
 
 	function renderButtons(){
 	// function to dynamically create buttons
@@ -101,6 +111,8 @@ $(document).ready(function(){
 				$(ghibliGif).attr("src", gifStill);
 
 				$(ghibliGif).attr("class", "ghibliGif");
+
+				$(gifDiv).attr("class", "ghibliDiv");
 
 				gifDiv.append(ghibliGif);
 				gifDiv.append(p);
