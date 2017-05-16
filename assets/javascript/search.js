@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 		var ghibliMovie = $(this).attr("data-title");
 
-		var queryURL ="http://api.giphy.com/v1/gifs/search?q=" + ghibliMovie + "&api_key=" + apiKey + "&limit=10";
+		var queryURL ="https://api.giphy.com/v1/gifs/search?q=" + ghibliMovie + "&api_key=" + apiKey + "&limit=10";
 
 		$.ajax({
 			url:queryURL,
