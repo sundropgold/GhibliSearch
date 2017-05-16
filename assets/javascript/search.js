@@ -64,7 +64,7 @@ $(document).ready(function(){
 	function getGhibliGif() {
 	// function to get the specific movie's gifs
 
-	//	$('#gifArea').empty();
+		$('#gifArea').empty();
 
 		var ghibliMovie = $(this).attr("data-title");
 
