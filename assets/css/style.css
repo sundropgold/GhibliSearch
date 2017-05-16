@@ -42,6 +42,8 @@ div#contentArea {
 	position:relative;
 	width:36%;
 	margin-top:4%;
+
+	border-right:3px dashed #ffa0c4;
 }
 
 div#searchArea {
@@ -64,6 +66,7 @@ div#gifArea {
 }
 
 div.ghibliDiv {
+	position:relative;
 	width:33%;
 	display: block;
 	float:left;
@@ -87,13 +90,21 @@ label, input, p, button {
 	font-size:15px;
 }
 
-p {
+div.ghibliDiv p {
+	position:absolute;
+	bottom:5px;
+	left:5px;
+	z-index:7;
+
 	margin:2%;
-	padding:1%;
+	padding-bottom:1%;
+
+	color:#edc7d5;
+	font-size:13px;
 }
 
 label {
-	font-size:20px;
+	font-size:28px;
 	font-weight:bolder;
 	padding: 2%;
 }
@@ -107,7 +118,11 @@ nav {
 }
 
 .navbar-inverse .navbar-text {
-	color:#ffe8ee;
+	color:#ffa0c4;
+}
+
+.navbar-inverse .navbar-text:hover {
+	color:#82c1f2;
 }
 /* ********** FORM ********** */
 
@@ -119,7 +134,7 @@ form {
 }
 
 input {
-	margin:1%;
+	margin:2%;
 }
 
 input#searchTerm {
@@ -127,6 +142,15 @@ input#searchTerm {
 	width:95%;
 	height:50px;
 
+	color:#ffa0c4;
+	border-color:#ffa0c4;
+	background-color: #ffffff;
+	border-width:2px;
+
+}
+
+hr {
+	border-top: 2px solid #ffffff;
 }
 
 /* ********** BUTTONS ********** */
@@ -136,40 +160,43 @@ input#searchTerm {
 	width:130px;
 	height:50px;
 
+	color:#ffa0c4;
+	border-style: solid;
+	border-width:2px;
+	border-color:#ffa0c4;
+	background-color:#ffffff;
+
+}
+
+#addBTN:hover {
+	color:#ffffff;
+	border-color:#ffffff;
+	background-color: #ffa0c4;
+}
+
+button:hover {
+
+
 	color:#82c1f2;
 	border-style: solid;
 	border-width:2px;
 	border-color:#b7e0ff;
 	background-color:#ffffff;
-	border-radius: 25px;
-
-}
-
-#addBTN:hover {
-	color:#ffa0c4;
-	border-color:#ffa0c4;
-	background-color: #ffffff;
 }
 
 button {
+
 	display:block;
 	float:left;
 
 	width:42%;
 	height:50px;
 	margin:1%;
+	border-radius: 25px;
 
-	color:#82c1f2;
+	color:#ffa0c4;
 	border-style: solid;
 	border-width:2px;
-	border-color:#b7e0ff;
-	background-color:#ffffff;
-
-	border-radius: 25px;
-}
-
-button:hover {
-	color:#ffa0c4;
 	border-color:#ffa0c4;
 	background-color: #ffffff;
 }
@@ -177,8 +204,9 @@ button:hover {
 /* ********** IMAGES ********** */
 img {
 	width:100%;
-	height:55%;
+	height:50%;
 	margin:3%;
+	overflow-y:hidden;
 }
 
 img:hover {

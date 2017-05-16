@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	// array of movie titles
-	var movies = ["spirited away", "howl's moving castle", "princess mononoke"]
+	var movies = ["spirited away", "howl's moving castle", "princess mononoke", "studio ghibli"];
 
 	// array of all available ghibli movies
 	var allMovies = ["castle in the sky", "grave of the fireflies", "my neighbor totoro", "kiki's delivery service", "only yesterday", "porco rosso", "pom poko", "whisper of the heart", "princess mononoke", "my neighbors the yamadas", "spirited away", "the cat returns", "howl's moving castle", "tales from earthsea", "ponyo", "arrietty", "the secret world of arrietty", "from up on poppy hill", "the wind rises", "the tale of the princess kaguya", "when marnie was there", "studio ghibli", "ghibli"];
