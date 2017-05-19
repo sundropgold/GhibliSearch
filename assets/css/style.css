@@ -38,7 +38,7 @@ div#title {
 	margin:0;
 }
 
-div#contentArea {
+div#contentArea.col-lg-5 {
 	position:relative;
 	width:36%;
 	margin-top:4%;
@@ -58,7 +58,7 @@ div#btnArea {
 	margin:0 auto;
 }
 
-div#gifArea {
+div#gifArea.col-lg-7  {
 	width:64%;
 	margin-top:4%;	
 	display:block;
@@ -159,6 +159,7 @@ hr {
 
 	width:130px;
 	height:50px;
+	margin:2%;
 
 	color:#ffa0c4;
 	border-style: solid;
@@ -172,16 +173,6 @@ hr {
 	color:#ffffff;
 	border-color:#ffffff;
 	background-color: #ffa0c4;
-}
-
-button:hover {
-
-
-	color:#82c1f2;
-	border-style: solid;
-	border-width:2px;
-	border-color:#b7e0ff;
-	background-color:#ffffff;
 }
 
 button {
@@ -201,6 +192,15 @@ button {
 	background-color: #ffffff;
 }
 
+button:hover {
+
+	color:#82c1f2;
+	border-style: solid;
+	border-width:2px;
+	border-color:#b7e0ff;
+	background-color:#ffffff;
+}
+
 /* ********** IMAGES ********** */
 img {
 	width:100%;
@@ -211,4 +211,22 @@ img {
 
 img:hover {
 	opacity:.7;
+}
+
+/* ******* MEDIA QUERIES ********** */
+@media screen and (max-width:993px) {
+
+	div#contentArea.col-sm-12 {
+		position:relative;
+		width:100%;
+		margin-top:4%;
+		margin-right:0;
+
+		border-right:none;
+	}
+
+	div#gifArea.col-sm-12  {
+		width:100%;
+	}
+
 }
