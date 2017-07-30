@@ -214,9 +214,9 @@ img:hover {
 }
 
 /* ******* MEDIA QUERIES ********** */
-@media screen and (max-width:993px) {
+@media screen and (max-width:1150px) {
 
-	div#contentArea.col-sm-12 {
+	div#contentArea.col-md-12 {
 		position:relative;
 		width:100%;
 		margin-top:4%;
