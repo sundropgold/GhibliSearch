@@ -9,15 +9,15 @@ $(document).ready(function(){
 	// store api key
 	var apiKey = "dc6zaTOxFJmzC";
 
-	var audio = new Audio('assets/javascript/bg.mp3');
+	// var audio = new Audio('assets/javascript/bg.mp3');
 
-	audio.addEventListener('ended', function(){
-				// loop after finished
-				this.currentTime = 0;
-				this.play();
-			}, false);
+	// audio.addEventListener('ended', function(){
+	// 			// loop after finished
+	// 			this.currentTime = 0;
+	// 			this.play();
+	// 		}, false);
 
-	audio.play();
+	// audio.play();
 
 	function renderButtons(){
 	// function to dynamically create buttons
@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 		var ghibliMovie = $(this).attr("data-title");
 
-		var queryURL ="https://api.giphy.com/v1/gifs/search?q=" + ghibliMovie + "&api_key=" + apiKey + "&limit=10";
+		var queryURL ="https://api.giphy.com/v1/gifs/search?q=" + ghibliMovie + "&api_key=" + apiKey + "&limit=20";
 
 		$.ajax({
 			url:queryURL,
@@ -78,7 +78,6 @@ $(document).ready(function(){
 
 			// store response object in results
 			var results = response.data;
-			console.log(results);
 
 			for (var i = 0; i < results.length; i++) {
 
@@ -86,10 +85,10 @@ $(document).ready(function(){
 				var gifDiv = $("<div>");
 
 				// grab the gif's rating
-				var rating = results[i].rating;
+				// var rating = results[i].rating;
 
 				// display gif rating
-				var p = $("<p>").text("rating: " + rating);
+				// var p = $("<p>").text("rating: " + rating);
 
 				// create img element to store gif
 				var ghibliGif = $("<img>");
@@ -116,11 +115,13 @@ $(document).ready(function(){
 
 				$(gifDiv).attr("class", "ghibliDiv");
 
+				$(gifDiv).attr("class", "slideUp");
+
 				gifDiv.append(ghibliGif);
-				gifDiv.append(p);
-
+				// gifDiv.append(p);
+				
 				$('#gifArea').prepend(gifDiv);
-
+				
 			}
 
 		}); // end done
@@ -132,13 +133,13 @@ $(document).ready(function(){
 
 		// store the state and animate/still srcs in variables
 		var state = $(this).attr('data-state');
-		console.log("state: " + state);
+		// console.log("state: " + state);
 
 		var gifA = $(this).attr('data-animate');
-		console.log("gifA: " + gifA);
+		// console.log("gifA: " + gifA);
 
 		var gifS = $(this).attr('data-still');
-		console.log("gifS: " + gifS);
+		// console.log("gifS: " + gifS);
 
 		// if the gif's state is still
 		if (state == 'still') {

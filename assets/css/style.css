@@ -2,7 +2,7 @@
 
 * {
 	box-sizing: border-box;
-	overflow-x:hidden;
+	overflow-x:none;
 }
 
 body {
@@ -43,7 +43,7 @@ div#contentArea.col-lg-5 {
 	width:36%;
 	margin-top:4%;
 
-	border-right:3px dashed #ffa0c4;
+	border-right:2px dashed #ffa0c4;
 }
 
 div#searchArea {
@@ -129,7 +129,7 @@ nav {
 form {
 
 	position:relative;
-	width:50%;
+	width:75%;
 
 }
 
@@ -139,8 +139,9 @@ input {
 
 input#searchTerm {
 
-	width:95%;
+	width:100%;
 	height:50px;
+	margin:0;
 
 	color:#ffa0c4;
 	border-color:#ffa0c4;
@@ -206,15 +207,62 @@ img {
 	width:100%;
 	height:50%;
 	margin:3%;
-	overflow-y:hidden;
+	overflow-y:none;
 }
 
 img:hover {
-	opacity:.7;
+	padding:1%;
+}
+
+/* ********** RESPONSIVE IMAGES GRID ********** */
+
+
+.slideUp {
+	-webkit-animation-name: slideIn;
+	-webkit-animation-duration: 1.5s;
+	animation-name: upAndIn;
+	animation-duration: 1.5s;
+	animation-delay:1s;
+
+	opacity:0;
+	animation: slideIn .5s ease 0.2s forwards;
+	transform:translateY(150px);
+}
+
+@keyframes slideIn {
+	to {
+		transform: translateY(0); 
+		opacity: 1;
+	}
+ }
+
+#gifArea {
+
+	line-height: 0;
+
+	-webkit-column-count: 5;
+	-webkit-column-gap:   0px;
+	-moz-column-count:    5;
+	-moz-column-gap:      0px;
+	column-count:         5;
+	column-gap:           0px;
+}
+
+.ghibliDiv {
+	width: 100% !important;
+	height: auto !important;
+
+	transition: transform 2s;
+}
+
+.ghibliGif {
+	padding:0;
+	margin:0;
+	border:0;
 }
 
 /* ******* MEDIA QUERIES ********** */
-@media screen and (max-width:1150px) {
+@media screen and (min-width: 770px) and (max-width:1150px) {
 
 	div#contentArea.col-md-12 {
 		position:relative;
@@ -229,4 +277,39 @@ img:hover {
 		width:100%;
 	}
 
+	button {
+		width:50%;
+	}
+
+}
+
+@media screen and (max-width:769px) {
+
+	div#contentArea.col-sm-12 {
+		position:relative;
+		width:100%;
+		margin-top:4%;
+		border-right:none;
+	}
+
+	div#gifArea.col-sm-12  {
+		width:100%;
+	}
+
+	button {
+		width:40%;
+	}
+
+	#btnArea.col-lg-12 {
+		display:block;
+		width:72%;
+		margin:0 auto;
+
+		padding:4%;
+	}
+
+	#gifArea {
+		border-top:2px solid white;
+		padding-top:5%;
+	}
 }
